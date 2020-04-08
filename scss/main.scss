@@ -30,9 +30,9 @@ body {
 	@include size(100%, 100%);
 	z-index: -1;
 	background: url("./../img/png/clouds-2.png") no-repeat center top,
-			url("./../img/png/clouds.png") no-repeat top center,
-		url("./../img/png/clouds.png") no-repeat center -150px,
-		url("./../img/png/clouds.png") no-repeat center -360px,
+			url("./../img/png/clouds.png") no-repeat center -65px,
+		url("./../img/png/clouds.png") no-repeat center -195px,
+		url("./../img/png/clouds.png") no-repeat center -270px,
 		url("./../img/png/bg-image.png") no-repeat center center;
 }
 
@@ -88,8 +88,7 @@ body {
 	height: 490px;
 	background-color: #fff;
 	padding: 10px;
-	border: 1px dashed rgba(0, 0, 0, 0.08);
-	box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.06);
+	box-shadow: 0px 20px 80px rgba(0, 0, 0, 0.2);
 	border-radius: 8px;
 	margin: 0 auto;
 
@@ -113,12 +112,12 @@ body {
 			position: relative;
 
 			.line {
-				height: 10px;
-				width: 50%;
-
+				@include size(50%, 10px);
 
 				&.active {
-					background-color: $green;
+					background: linear-gradient(0deg, rgba(80, 181, 32, 0.31), rgba(80, 181, 32, 0.31));
+					box-shadow: inset 0px 10px 20px rgba(255, 255, 255, 0.16);
+					border-radius: 999px;
 				}
 				&.inactive {
 					background-color: $lightgray;
@@ -126,6 +125,22 @@ body {
 			}
 			.steps__wrapper {
 				position: absolute;
+				width: 100%;
+
+				.step {
+					@include size(20px, 20px);
+					border-radius: 999px;
+					box-shadow: inset 0px 10px 20px rgba(255, 255, 255, 0.16);
+
+					&.step-active {
+						background: linear-gradient(0deg, $green, $green);
+
+					}
+					&.step-inactive {
+						background: linear-gradient(0deg, #FFF, #FFF);
+						border: 3px solid #F5F5F5;
+					}
+				}
 			}
 		}
 	}
@@ -140,7 +155,7 @@ body {
 		.question__main {
 			@include font_size-line(24px, 29px);
 			margin-bottom: 37px;
-			max-width: 256px;
+			max-width: 276px;
 			text-align: center;
 		}
 		.input {
@@ -152,13 +167,31 @@ body {
 			padding: 19px;
 			z-index: 1;
 		}
+		.input__wrapper {
+			width: 271px;
+			padding: 14px;
+			border: 1px dashed rgba(0, 0, 0, 0.08);
+			box-sizing: border-box;
+			box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.06);
+			border-radius: 8px;
+
+			label {
+				@include font_size-line(16px, 26px);
+			}
+
+			&:not(:last-child) {
+				margin-bottom: 20px;
+
+			}
+		}
 	}
 }
 .img_top-layer {
 	position: absolute;
 	width: 100%;
 	height: 100vh;
-	background: url("./../img/png/cow-with-bush.png") no-repeat center bottom;
+	background: url("./../img/png/cow-with-bush.png") no-repeat center bottom,
+	url("./../img/png/bush.png") no-repeat right bottom;
 	bottom: 0;
 	left: 0;
 }

@@ -39,6 +39,11 @@
 	display: flex;
 	justify-content: space-between;
 }
+.flex-between-center {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
 .flex-col-top-center {
 	display: flex;
 	flex-direction: column;
