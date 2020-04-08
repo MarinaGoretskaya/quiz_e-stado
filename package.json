@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "gulp": "^4.0.2"
+    "bootstrap": "^4.4.1",
+    "gulp": "^4.0.2",
+    "jquery": "^3.4.1"
   },
   "devDependencies": {
     "gulp-sass": "^4.0.2",
