@@ -1,0 +1,12 @@
+a {
+  color: #fff;
+  font-size: 15px; }
+  a a:hover {
+    background: #000;
+    height: 50px;
+    display: block; }
+
+div {
+  font-size: 25px; }
+
+/*# sourceMappingURL=main.css.map */
