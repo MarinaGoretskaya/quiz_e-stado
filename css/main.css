@@ -396,7 +396,8 @@ textarea {
   color: #50B520; }
 
 .bold {
-  font-weight: bold; }
+  font-weight: bold;
+  font-family: Gilroy; }
 
 .center {
   text-align: center; }
@@ -411,30 +412,22 @@ body {
   font-size: 12px;
   line-height: 18px;
   font-weight: normal;
-  background: url("./../img/png/bg-image.png") no-repeat;
-  background-size: 100% 100%;
-  position: relative; }
+  position: relative;
+  padding: 61px 0; }
 
 *, *::before, *::after {
   box-sizing: inherit; }
 
-.img_clouds {
+.bg {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  box-sizing: border-box;
-  z-index: -1; }
-  .img_clouds .clouds {
-    position: absolute;
-    width: 100%; }
-  .img_clouds .clouds-1 {
-    top: -320px; }
-  .img_clouds .clouds-2 {
-    top: -160px; }
+  height: 100%;
+  z-index: -1;
+  background: url("./../img/png/clouds-2.png") no-repeat center top, url("./../img/png/clouds.png") no-repeat top center, url("./../img/png/clouds.png") no-repeat center -150px, url("./../img/png/clouds.png") no-repeat center -360px, url("./../img/png/bg-image.png") no-repeat center center; }
 
 .header {
-  margin-top: 61px;
   margin-bottom: 73px; }
   .header__logo_pict {
     margin-right: 15.14px; }
@@ -466,7 +459,8 @@ body {
       width: 270px; }
       .section-top__items-wrapper .item__logo {
         width: 60px;
-        height: 60px; }
+        height: 60px;
+        margin-right: 9px; }
       .section-top__items-wrapper .item:not(:last-child) {
         margin-right: 51px; }
 
@@ -487,6 +481,23 @@ body {
     height: 76px;
     padding: 28px 26px 28px 27px;
     margin-bottom: 10px; }
+    .section-rect .questions-line__block .questions-line {
+      width: 100%;
+      height: 16px;
+      border: 0.5px solid rgba(0, 0, 0, 0.05);
+      box-sizing: border-box;
+      box-shadow: inset 0px 10px 20px rgba(255, 255, 255, 0.16);
+      border-radius: 999px;
+      position: relative; }
+      .section-rect .questions-line__block .questions-line .line {
+        height: 10px;
+        width: 50%; }
+        .section-rect .questions-line__block .questions-line .line.active {
+          background-color: #50B520; }
+        .section-rect .questions-line__block .questions-line .line.inactive {
+          background-color: #F4F4F4; }
+      .section-rect .questions-line__block .questions-line .steps__wrapper {
+        position: absolute; }
   .section-rect .questions-content__block {
     padding: 34px; }
     .section-rect .questions-content__block .question__title {
@@ -508,11 +519,22 @@ body {
       font-size: 16px;
       line-height: 20px;
       font-family: Gilroy;
-      padding: 19px; }
+      padding: 19px;
+      z-index: 1; }
 
 .img_top-layer {
   position: absolute;
+  width: 100%;
+  height: 100vh;
+  background: url("./../img/png/cow-with-bush.png") no-repeat center bottom;
   bottom: 0;
   left: 0; }
+
+@media (max-width: 920px) {
+  .section-top__items-wrapper {
+    flex-direction: column;
+    justify-content: center; }
+    .section-top__items-wrapper .item:not(:last-child) {
+      margin-bottom: 20px; } }
 
 /*# sourceMappingURL=main.css.map */

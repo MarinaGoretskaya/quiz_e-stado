@@ -9,11 +9,7 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    <div class="img_clouds">
-        <img src="./img/png/clouds.png" alt="clouds" class="clouds clouds-1">
-        <img src="./img/png/clouds.png" alt="clouds" class="clouds clouds-2">
-        <img src="./img/png/clouds.png" alt="clouds" class="clouds clouds-3">
-    </div>
+    <div class="bg"></div>
     <header class="header">
         <div class="wrapper">
             <div class="header__logo flex-center">
@@ -46,7 +42,7 @@
                     <img src="./img/svg/item-logo.svg" alt="item-logo" class="logo">
                 </div>
                 <div class="item__content">
-                    <span class="bold">Анализом состояния здоровья коровы</span><br>
+                    <span class="bold">Анализом состояния<br>здоровья коровы</span><br>
                     при наблюдении за&nbsp;жвачкой, активностью и&nbsp;температурой тела
                 </div>
             </div>
@@ -56,23 +52,31 @@
                 </div>
                 <div class="item__content">
                     <span class="bold">Выявление хромоты</span><br>
-                    предупреждением и&nbsp;выявлением развития хромоты
+                    предупреждением<br>и&nbsp;выявлением развития<br>хромоты
                 </div>
             </div>
         </div>
     </section>
     <section class="section section-rect">
         <div class="questions-line__block block">
-
+            <div class="questions-line flex-between">
+                <div class="line line-left active"></div>
+                <div class="line line-right inactive"></div>
+                <div class="steps__wrapper">
+                    <div class="step-active"></div>
+                    <div class="step-active"></div>
+                    <div class="step-inactive"></div>
+                </div>
+            </div>
         </div>
         <div class="questions-content__block block flex-col-top-center">
             <div class="question__title">Вопрос 1</div>
             <div class="question__main">Сколько у вас <span class="color-green bold">дойных коров?</span></div>
-            <input class="input" placeholder="Например: 45">
+            <input class="input cursor-text" placeholder="Например: 45">
         </div>
     </section>
     <div class="img_top-layer">
-        <img src="./img/png/cow-with-bush.png" alt="cow-with-bush">
+        <!--<img src="./img/png/cow-with-bush.png" alt="cow-with-bush">-->
     </div>
 </body>
 </html>

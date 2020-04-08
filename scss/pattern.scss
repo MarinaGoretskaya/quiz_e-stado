@@ -48,6 +48,8 @@
 
 /////COLORS
 $green: #50B520;
+$lightgray: #F4F4F4;
+
 .color-green {
 	color: $green;
 }
@@ -63,6 +65,7 @@ $green: #50B520;
 }
 .bold {
 	font-weight: bold;
+	font-family: Gilroy;
 }
 .center {
 	text-align: center;
