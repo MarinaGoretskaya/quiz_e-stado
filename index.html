@@ -58,7 +58,7 @@
         </section>
 
         <!--section-rect 1-->
-        <section id="section-rect-1" class="section section-rect section-rect-1 display-none">
+        <section id="section-rect-1" class="section section-rect section-rect-1">
             <div class="quest-line__block block">
                 <div class="quest-line flex-between-center">
                     <div class="line line-left inactive"></div>
@@ -115,15 +115,15 @@
                 <div class="quest__main"><span class="color-green bold">Вы являетесь?</span></div>
                 <div class="inputs__container">
                     <div class="input-radio__wrapper flex">
-                        <input type="radio" id="boss" name="position" checked>
+                        <input type="radio" id="boss" name="position" value="Руководитель фермы" checked>
                         <label for="boss">Руководителем фермы</label>
                     </div>
                     <div class="input-radio__wrapper flex">
-                        <input type="radio" id="technician" name="position">
+                        <input type="radio" id="technician" name="position" value="Зоотехник">
                         <label for="technician">Зоотехником</label>
                     </div>
                     <div class="input-radio__wrapper flex">
-                        <input type="radio" id="veterinarian" name="position">
+                        <input type="radio" id="veterinarian" name="position" value="Ветеринар">
                         <label for="veterinarian">Ветеринаром</label>
                     </div>
                 </div>
@@ -131,7 +131,7 @@
         </section>
 
         <!--section-rect 4-->
-        <section id="section-rect-4" class="section section-rect section-rect-4">
+        <section id="section-rect-4" class="section section-rect section-rect-4 display-none">
             <div class="quest-line__block block">
                 <div class="quest-line flex-between-center">
                     <div class="line line-left active"></div>
@@ -147,23 +147,23 @@
                 <div class="quest__main"><span class="color-green bold">Куда прислать вам ответ?</span></div>
                 <div class="inputs__container flex-wrap-center">
                     <div class="input-radio__wrapper flex">
-                        <input type="radio" id="tel" name="contact" checked>
+                        <input type="radio" id="tel" name="contact" value="Телефон" checked>
                         <label for="tel">По телефону</label>
                     </div>
                     <div class="input-radio__wrapper flex">
-                        <input type="radio" id="e-mail" name="contact">
+                        <input type="radio" id="e-mail" name="contact" value="e-mail">
                         <label for="e-mail">E-mail</label>
                     </div>
                     <div class="input-radio__wrapper flex">
-                        <input type="radio" id="viber" name="contact">
+                        <input type="radio" id="viber" name="contact" value="viber">
                         <label for="viber">Viber</label>
                     </div>
                     <div class="input-radio__wrapper flex-start-center">
-                        <input type="radio" id="telegram" name="contact">
+                        <input type="radio" id="telegram" name="contact" value="telegram">
                         <label for="telegram">Telegram</label>
                     </div>
                     <div class="input-radio__wrapper flex-start-center">
-                        <input type="radio" id="whatsapp" name="contact">
+                        <input type="radio" id="whatsapp" name="contact" value="whatsapp">
                         <label for="whatsapp">Whatsapp</label>
                     </div>
                 </div>
@@ -198,6 +198,6 @@
     <div class="img_top-layer">
         <!--<img src="./img/png/cow-with-bush.png" alt="cow-with-bush">-->
     </div>
-
+    <script src="js/script.js"></script>
 </body>
 </html>
