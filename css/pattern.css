@@ -34,6 +34,21 @@
   display: flex;
   justify-content: space-between; }
 
+.flex-wrap-between {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; }
+
+.flex-wrap-center {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; }
+
+.flex-start-center {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center; }
+
 .flex-between-center {
   display: flex;
   justify-content: space-between;

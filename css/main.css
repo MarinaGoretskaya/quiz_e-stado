@@ -383,6 +383,21 @@ textarea {
   display: flex;
   justify-content: space-between; }
 
+.flex-wrap-between {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; }
+
+.flex-wrap-center {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; }
+
+.flex-start-center {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center; }
+
 .flex-between-center {
   display: flex;
   justify-content: space-between;
@@ -417,8 +432,7 @@ body {
   font-size: 12px;
   line-height: 18px;
   font-weight: normal;
-  position: relative;
-  padding: 61px 0; }
+  position: relative; }
 
 *, *::before, *::after {
   box-sizing: inherit; }
@@ -432,8 +446,12 @@ body {
   z-index: -1;
   background: url("./../img/png/clouds-2.png") no-repeat center top, url("./../img/png/clouds.png") no-repeat center -65px, url("./../img/png/clouds.png") no-repeat center -195px, url("./../img/png/clouds.png") no-repeat center -270px, url("./../img/png/bg-image.png") no-repeat center center; }
 
+main {
+  padding: 41px 20px; }
+
 .header {
-  margin-bottom: 73px; }
+  margin: 0 auto 73px;
+  max-width: 962px; }
   .header__logo_pict {
     margin-right: 15.14px; }
   .header__logo_title {
@@ -443,17 +461,13 @@ body {
     text-align: left;
     line-height: 18px; }
 
-.wrapper {
-  margin: 0 auto;
-  max-width: 962px; }
-
 .section-top {
   margin-bottom: 53px; }
   .section-top__title {
     margin-bottom: 12px;
     font-size: 17px;
     line-height: 20px; }
-  .section-top__question {
+  .section-top__quest {
     max-width: 413px;
     font-size: 24px;
     line-height: 34px;
@@ -481,11 +495,11 @@ body {
     border: 1px solid rgba(0, 0, 0, 0.08);
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.06);
     border-radius: 8px; }
-  .section-rect .questions-line__block {
+  .section-rect .quest-line__block {
     height: 76px;
     padding: 28px 26px 28px 27px;
     margin-bottom: 10px; }
-    .section-rect .questions-line__block .questions-line {
+    .section-rect .quest-line__block .quest-line {
       width: 100%;
       height: 16px;
       border: 0.5px solid rgba(0, 0, 0, 0.05);
@@ -493,63 +507,150 @@ body {
       box-shadow: inset 0px 10px 20px rgba(255, 255, 255, 0.16);
       border-radius: 999px;
       position: relative; }
-      .section-rect .questions-line__block .questions-line .line {
+      .section-rect .quest-line__block .quest-line .line {
         width: 50%;
         height: 10px; }
-        .section-rect .questions-line__block .questions-line .line.active {
+        .section-rect .quest-line__block .quest-line .line.active {
           background: linear-gradient(0deg, rgba(80, 181, 32, 0.31), rgba(80, 181, 32, 0.31));
           box-shadow: inset 0px 10px 20px rgba(255, 255, 255, 0.16);
           border-radius: 999px; }
-        .section-rect .questions-line__block .questions-line .line.inactive {
+        .section-rect .quest-line__block .quest-line .line.inactive {
           background-color: #F4F4F4; }
-      .section-rect .questions-line__block .questions-line .steps__wrapper {
+      .section-rect .quest-line__block .quest-line .steps__wrapper {
         position: absolute;
         width: 100%; }
-        .section-rect .questions-line__block .questions-line .steps__wrapper .step {
+        .section-rect .quest-line__block .quest-line .steps__wrapper .step {
           width: 20px;
           height: 20px;
           border-radius: 999px;
           box-shadow: inset 0px 10px 20px rgba(255, 255, 255, 0.16); }
-          .section-rect .questions-line__block .questions-line .steps__wrapper .step.step-active {
+          .section-rect .quest-line__block .quest-line .steps__wrapper .step.step-active {
             background: linear-gradient(0deg, #50B520, #50B520); }
-          .section-rect .questions-line__block .questions-line .steps__wrapper .step.step-inactive {
+          .section-rect .quest-line__block .quest-line .steps__wrapper .step.step-inactive {
             background: linear-gradient(0deg, #FFF, #FFF);
             border: 3px solid #F5F5F5; }
-  .section-rect .questions-content__block {
-    padding: 34px; }
-    .section-rect .questions-content__block .question__title {
+  .section-rect .quest-content__block {
+    padding: 34px;
+    height: 384px; }
+    .section-rect .quest-content__block .quest__title {
       text-transform: uppercase;
       font-size: 14px;
       line-height: 17px;
       margin-bottom: 14px; }
-    .section-rect .questions-content__block .question__main {
+    .section-rect .quest-content__block .quest__main {
       font-size: 24px;
       line-height: 29px;
       margin-bottom: 37px;
-      max-width: 276px;
+      max-width: 300px;
       text-align: center; }
-    .section-rect .questions-content__block .input {
-      border-radius: 8px;
+    .section-rect .quest-content__block .input[type="number"] {
+      border-radius: 4px;
+      border: none;
       background-color: #F4F4F4;
       width: 210px;
       height: 61px;
       font-size: 16px;
       line-height: 20px;
+      box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.02);
       font-family: Gilroy;
       padding: 19px;
       z-index: 1; }
-    .section-rect .questions-content__block .input__wrapper {
+    .section-rect .quest-content__block .input-radio__wrapper {
       width: 271px;
       padding: 14px;
-      border: 1px dashed rgba(0, 0, 0, 0.08);
+      border: 1px solid rgba(0, 0, 0, 0.08);
       box-sizing: border-box;
-      box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.06);
-      border-radius: 8px; }
-      .section-rect .questions-content__block .input__wrapper label {
+      border-radius: 4px; }
+      .section-rect .quest-content__block .input-radio__wrapper label {
         font-size: 16px;
         line-height: 26px; }
-      .section-rect .questions-content__block .input__wrapper:not(:last-child) {
+      .section-rect .quest-content__block .input-radio__wrapper:not(:last-child) {
         margin-bottom: 20px; }
+      .section-rect .quest-content__block .input-radio__wrapper input[type="radio"]:checked, .section-rect .quest-content__block .input-radio__wrapper input[type="radio"]:not(:checked) {
+        position: absolute;
+        left: -9999px; }
+      .section-rect .quest-content__block .input-radio__wrapper input[type="radio"]:checked + label,
+      .section-rect .quest-content__block .input-radio__wrapper input[type="radio"]:not(:checked) + label {
+        display: inline-block;
+        position: relative;
+        padding-left: 31px;
+        cursor: pointer; }
+      .section-rect .quest-content__block .input-radio__wrapper input[type="radio"]:checked + label:before,
+      .section-rect .quest-content__block .input-radio__wrapper input[type="radio"]:not(:checked) + label:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 2px;
+        width: 20px;
+        height: 20px;
+        border: 0.5px solid rgba(0, 0, 0, 0.08);
+        background-color: #fff;
+        border-radius: 999px;
+        box-shadow: inset 0px 10px 20px rgba(255, 255, 255, 0.16); }
+      .section-rect .quest-content__block .input-radio__wrapper input[type="radio"]:checked + label:after,
+      .section-rect .quest-content__block .input-radio__wrapper input[type="radio"]:not(:checked) + label:after {
+        content: "";
+        position: absolute;
+        -webkit-transition: all 0.2s ease;
+        -moz-transition: all 0.2s ease;
+        -o-transition: all 0.2s ease;
+        transition: all 0.2s ease;
+        left: 3px;
+        top: 5px;
+        width: 14px;
+        height: 14px;
+        border-radius: 999px; }
+      .section-rect .quest-content__block .input-radio__wrapper input[type="radio"]:not(:checked) + label:after {
+        background-color: #F2F2F2; }
+      .section-rect .quest-content__block .input-radio__wrapper input[type="radio"]:checked + label:after {
+        background: linear-gradient(180deg, #FEE9A1 0%, #FFDD64 100%); }
+  .section-rect.section-rect-4 .quest-content__block {
+    padding: 22px; }
+    .section-rect.section-rect-4 .quest-content__block .quest__main {
+      margin-bottom: 18px; }
+    .section-rect.section-rect-4 .quest-content__block .inputs__container {
+      max-width: 510px; }
+      .section-rect.section-rect-4 .quest-content__block .inputs__container .input-radio__wrapper {
+        margin: 5px;
+        width: 160px;
+        padding: 6px 14px 6px; }
+    .section-rect.section-rect-4 .quest-content__block .input-txt__wrapper {
+      margin: 12px 0 11px;
+      position: relative; }
+      .section-rect.section-rect-4 .quest-content__block .input-txt__wrapper input {
+        width: 307px;
+        height: 90px;
+        background: rgba(250, 250, 250, 0.62);
+        box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.01);
+        border-radius: 4px;
+        border: none;
+        padding: 41px 24px 17px;
+        font-size: 20px;
+        line-height: 32px;
+        color: #000;
+        font-family: Gilroy; }
+      .section-rect.section-rect-4 .quest-content__block .input-txt__wrapper label {
+        position: absolute;
+        top: 17px;
+        left: 17px;
+        font-size: 13px;
+        line-height: 15px;
+        color: rgba(36, 36, 36, 0.5); }
+    .section-rect.section-rect-4 .quest-content__block button[type="submit"] {
+      width: 307px;
+      height: 70px;
+      background: linear-gradient(104.01deg, #FBDB6A 5.19%, #FFEBA3 49.97%, #FBDB6A 95.49%);
+      box-shadow: inset 0px 0px 26px rgba(255, 255, 255, 0.54), 0px 4px 0px #E8C240;
+      border: none;
+      border-radius: 52px;
+      font-size: 16px;
+      line-height: 19px;
+      font-family: Gilroy;
+      padding: 28px 21px 27px 22px; }
+      .section-rect.section-rect-4 .quest-content__block button[type="submit"]:hover {
+        background: linear-gradient(104.34deg, #FFCF23 -1.99%, #FCE287 52.26%, #FFCE23 107.41%); }
+      .section-rect.section-rect-4 .quest-content__block button[type="submit"]:active {
+        opacity: 0.5; }
 
 .img_top-layer {
   position: absolute;
@@ -557,7 +658,8 @@ body {
   height: 100vh;
   background: url("./../img/png/cow-with-bush.png") no-repeat center bottom, url("./../img/png/bush.png") no-repeat right bottom;
   bottom: 0;
-  left: 0; }
+  left: 0;
+  z-index: -1; }
 
 @media (max-width: 920px) {
   .section-top__items-wrapper {
