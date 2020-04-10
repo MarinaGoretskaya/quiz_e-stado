@@ -462,7 +462,7 @@ main {
     line-height: 18px; }
 
 .section-top {
-  margin-bottom: 53px; }
+  margin-bottom: 49px; }
   .section-top__title {
     margin-bottom: 12px;
     font-size: 17px;
@@ -485,12 +485,13 @@ main {
 
 .section-rect {
   max-width: 962px;
-  height: 490px;
+  min-height: 490px;
   background-color: #fff;
   padding: 10px;
   box-shadow: 0px 20px 80px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  position: relative; }
   .section-rect .block {
     border: 1px solid rgba(0, 0, 0, 0.08);
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.06);
@@ -531,7 +532,7 @@ main {
             border: 3px solid #F5F5F5; }
   .section-rect .quest-content__block {
     padding: 34px;
-    height: 384px; }
+    min-height: 384px; }
     .section-rect .quest-content__block .quest__title {
       text-transform: uppercase;
       font-size: 14px;
@@ -586,7 +587,8 @@ main {
         border: 0.5px solid rgba(0, 0, 0, 0.08);
         background-color: #fff;
         border-radius: 999px;
-        box-shadow: inset 0px 10px 20px rgba(255, 255, 255, 0.16); }
+        box-shadow: inset 0px 10px 20px rgba(255, 255, 255, 0.16);
+        z-index: 1; }
       .section-rect .quest-content__block .input-radio__wrapper input[type="radio"]:checked + label:after,
       .section-rect .quest-content__block .input-radio__wrapper input[type="radio"]:not(:checked) + label:after {
         content: "";
@@ -599,11 +601,31 @@ main {
         top: 5px;
         width: 14px;
         height: 14px;
-        border-radius: 999px; }
+        border-radius: 999px;
+        z-index: 1; }
       .section-rect .quest-content__block .input-radio__wrapper input[type="radio"]:not(:checked) + label:after {
         background-color: #F2F2F2; }
       .section-rect .quest-content__block .input-radio__wrapper input[type="radio"]:checked + label:after {
         background: linear-gradient(180deg, #FEE9A1 0%, #FFDD64 100%); }
+  .section-rect button.transition {
+    width: 146px;
+    height: 58px;
+    background: linear-gradient(104.01deg, #FBDB6A 5.19%, #FFEBA3 49.97%, #FBDB6A 95.49%);
+    box-shadow: inset 0px 0px 26px rgba(255, 255, 255, 0.54), 0px 4px 0px #E8C240;
+    border: none;
+    border-radius: 52px;
+    font-family: Gilroy;
+    font-size: 16px;
+    line-height: 19px;
+    position: absolute;
+    bottom: -25px;
+    z-index: 1; }
+    .section-rect button.transition:hover {
+      background: linear-gradient(104.34deg, #FFCF23 -1.99%, #FCE287 52.26%, #FFCE23 107.41%); }
+    .section-rect button.transition:active {
+      opacity: 0.5; }
+    .section-rect button.transition .next-icon {
+      margin-left: 12px; }
   .section-rect.section-rect-4 .quest-content__block {
     padding: 22px; }
     .section-rect.section-rect-4 .quest-content__block .quest__main {
@@ -616,7 +638,8 @@ main {
         padding: 6px 14px 6px; }
     .section-rect.section-rect-4 .quest-content__block .input-txt__wrapper {
       margin: 12px 0 11px;
-      position: relative; }
+      position: relative;
+      z-index: 1; }
       .section-rect.section-rect-4 .quest-content__block .input-txt__wrapper input {
         width: 307px;
         height: 90px;
@@ -632,25 +655,13 @@ main {
       .section-rect.section-rect-4 .quest-content__block .input-txt__wrapper label {
         position: absolute;
         top: 17px;
-        left: 17px;
+        left: 24px;
         font-size: 13px;
         line-height: 15px;
         color: rgba(36, 36, 36, 0.5); }
-    .section-rect.section-rect-4 .quest-content__block button[type="submit"] {
+    .section-rect.section-rect-4 .quest-content__block button.transition {
       width: 307px;
-      height: 70px;
-      background: linear-gradient(104.01deg, #FBDB6A 5.19%, #FFEBA3 49.97%, #FBDB6A 95.49%);
-      box-shadow: inset 0px 0px 26px rgba(255, 255, 255, 0.54), 0px 4px 0px #E8C240;
-      border: none;
-      border-radius: 52px;
-      font-size: 16px;
-      line-height: 19px;
-      font-family: Gilroy;
-      padding: 28px 21px 27px 22px; }
-      .section-rect.section-rect-4 .quest-content__block button[type="submit"]:hover {
-        background: linear-gradient(104.34deg, #FFCF23 -1.99%, #FCE287 52.26%, #FFCE23 107.41%); }
-      .section-rect.section-rect-4 .quest-content__block button[type="submit"]:active {
-        opacity: 0.5; }
+      height: 70px; }
 
 .img_top-layer {
   position: absolute;
@@ -658,14 +669,21 @@ main {
   height: 100vh;
   background: url("./../img/png/cow-with-bush.png") no-repeat center bottom, url("./../img/png/bush.png") no-repeat right bottom;
   bottom: 0;
-  left: 0;
-  z-index: -1; }
+  left: 0; }
 
-@media (max-width: 920px) {
+@media (max-width: 970px) {
   .section-top__items-wrapper {
     flex-direction: column;
     justify-content: center; }
     .section-top__items-wrapper .item:not(:last-child) {
-      margin-bottom: 20px; } }
+      margin-bottom: 20px; }
+    .section-top__items-wrapper .item {
+      flex-direction: column;
+      align-items: center;
+      text-align: center; }
+    .section-top__items-wrapper .item-1, .section-top__items-wrapper .item-3 {
+      display: none; }
+  .section-rect button.transition {
+    bottom: 16px; } }
 
 /*# sourceMappingURL=main.css.map */

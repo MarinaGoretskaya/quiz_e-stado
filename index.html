@@ -27,7 +27,7 @@
                 путем
             </div>
             <div class="section-top__items-wrapper flex-between">
-                <div class="item flex">
+                <div class="item item-1 flex">
                     <div class="item__logo">
                         <img src="./img/svg/item-logo.svg" alt="item-logo" class="logo">
                     </div>
@@ -36,16 +36,16 @@
                         особенно если она не&nbsp;заметна по&nbsp;внешним признакам
                     </div>
                 </div>
-                <div class="item flex">
+                <div class="item item-2 flex">
                     <div class="item__logo">
                         <img src="./img/svg/item-logo.svg" alt="item-logo" class="logo">
                     </div>
                     <div class="item__content">
-                        <span class="bold">Анализом состояния<br>здоровья коровы</span><br>
+                        <span class="bold">Анализом состояния здоровья коровы</span><br>
                         при наблюдении за&nbsp;жвачкой, активностью и&nbsp;температурой тела
                     </div>
                 </div>
-                <div class="item flex">
+                <div class="item item-3 flex">
                     <div class="item__logo">
                         <img src="./img/svg/item-logo.svg" alt="item-logo" class="logo">
                     </div>
@@ -73,7 +73,13 @@
             <div class="quest-content__block block flex-col-top-center">
                 <div class="quest__title">Вопрос 1</div>
                 <div class="quest__main">Сколько у вас <span class="color-green bold">дойных коров?</span></div>
-                <input class="input cursor-text" placeholder="Например: 45" type="number">
+                <input class="input cursor-text" placeholder="Например: 45" type="number" autofocus>
+                <button type="submit" class="transition next flex-center">
+                    <span class="next-txt">Далее</span>
+                    <span class="next-icon">
+                        <img src="./img/png/icon-next.png" alt="next">
+                    </span>
+                </button>
             </div>
         </section>
 
@@ -92,8 +98,14 @@
             </div>
             <div class="quest-content__block block flex-col-top-center">
                 <div class="quest__title">Вопрос 2</div>
-                <div class="quest__main">Сколько <span class="color-green bold">молока в&nbsp;сутки<br>вы доите?</span></div>
-                <input class="input cursor-text" placeholder="Например: 12" type="number">
+                <div class="quest__main">Сколько <span class="color-green bold">молока в&nbsp;сутки вы доите?</span></div>
+                <input class="input cursor-text" placeholder="Например: 12" type="number" autofocus>
+                <button type="submit" class="transition next flex-center">
+                    <span class="next-txt">Далее</span>
+                    <span class="next-icon">
+                        <img src="./img/png/icon-next.png" alt="next">
+                    </span>
+                </button>
             </div>
         </section>
 
@@ -127,6 +139,12 @@
                         <label for="veterinarian">Ветеринаром</label>
                     </div>
                 </div>
+                <button type="submit" class="transition next flex-center">
+                    <span class="next-txt">Далее</span>
+                    <span class="next-icon">
+                        <img src="./img/png/icon-next.png" alt="next">
+                    </span>
+                </button>
             </div>
         </section>
 
@@ -169,27 +187,27 @@
                 </div>
 
                 <div id="input-tel" class="input-txt__wrapper tel display-none">
-                    <input type="tel" placeholder="+375 (_ _) _ _ _-_ _-_ _">
+                    <input type="tel" placeholder="+375 (_ _) _ _ _-_ _-_ _" autofocus>
                     <label for="tel">Введите ваш номер телефона</label>
                 </div>
                 <div id="input-email" class="input-txt__wrapper email display-none">
-                    <input type="email" placeholder="simple@example.com">
+                    <input type="email" placeholder="simple@example.com" autofocus>
                     <label for="tel">Введите ваш e-mail</label>
                 </div>
                 <div id="input-viber" class="input-txt__wrapper viber">
-                    <input type="tel" placeholder="+375 (_ _) _ _ _-_ _-_ _">
+                    <input type="tel" placeholder="+375 (_ _) _ _ _-_ _-_ _" autofocus>
                     <label for="tel">Введите ваш номер Viber</label>
                 </div>
                 <div id="input-telegram" class="input-txt__wrapper telegram display-none">
-                    <input type="tel" placeholder="+375 (_ _) _ _ _-_ _-_ _">
+                    <input type="tel" placeholder="+375 (_ _) _ _ _-_ _-_ _" autofocus>
                     <label for="tel">Введите ваш номер Telegram</label>
                 </div>
                 <div id="input-whatsapp" class="input-txt__wrapper whatsapp display-none">
-                    <input type="tel" placeholder="+375 (_ _) _ _ _-_ _-_ _">
+                    <input type="tel" placeholder="+375 (_ _) _ _ _-_ _-_ _" autofocus>
                     <label for="tel">Введите ваш номер Whatsapp</label>
                 </div>
 
-                <button type="submit" class="submit">Отправить и получить ответ</button>
+                <button type="submit" class="transition submit">Отправить и получить ответ</button>
 
             </div>
         </section>
