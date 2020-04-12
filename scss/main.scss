@@ -7,7 +7,6 @@
 /***** Box-sizing *****/
 html {
 	box-sizing: border-box;
-
 }
 
 body {
@@ -84,6 +83,9 @@ main {
 
 			&:not(:last-child) {
 				margin-right: 51px;
+			}
+			&__content {
+				@include font_size-line(12px, 18px);
 			}
 		}
 	}
@@ -341,30 +343,202 @@ main {
 	url("./../img/png/bush.png") no-repeat right bottom;
 	bottom: 0;
 	left: 0;
-	//z-index: -1;
+	z-index: -1;
 }
 
 
 @media (max-width: 970px) {
-	.section-top__items-wrapper {
-		flex-direction: column;
-		justify-content: center;
+	.header {
+		margin-bottom: 37px;
 
-		.item:not(:last-child) {
-			margin-bottom: 20px;
+		&__logo_pict {
+			width: 93.24px;
 		}
-		.item {
+		&__logo_title {
+			@include font_size-line(9px, 13px);
+		}
+	}
+	.section-top {
+		margin-bottom: 25px;
+
+		&__title {
+			margin-bottom: 5px;
+			@include font_size-line(10px, 12px);
+		}
+
+		&__quest {
+			@include font_size-line(15px, 20px);
+			margin-bottom: 13px;
+		}
+
+		&__items-wrapper {
 			flex-direction: column;
-			align-items: center;
-			text-align: center;
-		}
-		.item-1, .item-3 {
-			display: none;
+			justify-content: center;
+
+			.item {
+				flex-direction: column;
+				align-items: center;
+				text-align: center;
+				margin-right: 0!important;
+
+				&__logo {
+					@include size(30px, 30px);
+					margin-right: 0;
+					margin-bottom: 6px;
+
+					img {
+						@include size(100%, 100%);
+					}
+				}
+
+				&__content {
+					@include font_size-line(11px, 18px);
+				}
+			}
+
+			.item-1, .item-3 {
+				display: none;
+			}
 		}
 	}
 	.section-rect {
+		padding: 5px;
+		min-height: 332px;
+
+		.quest-line__block {
+			height: 33px;
+			padding: 11px 14px 12px;
+			margin-bottom: 4px;
+
+			.quest-line {
+				height: 6px;
+
+				.line {
+					height: 4px;
+				}
+
+				.steps__wrapper {
+					.step {
+						@include size(10px, 10px);
+					}
+				}
+			}
+		}
+
+		.quest-content__block {
+			padding: 24px;
+
+			.quest__title {
+				@include font_size-line(12px, 14px);
+				margin-bottom: 20px;
+			}
+
+			.quest__main {
+				@include font_size-line(18px, 22px);
+				margin-bottom: 18px;
+			}
+
+			.input[type="number"] {
+				@include size(176px, 50px);
+				@include font_size-line(14px, 20px);
+				padding: 15px 16px 18px;
+			}
+
+			.input-radio__wrapper {
+				width: 183px;
+				padding: 4px 14px;
+
+				label {
+					@include font_size-line(10px, 26px);
+				}
+
+				&:not(:last-child) {
+					margin-bottom: 6px;
+				}
+
+				input[type="radio"] {
+
+					&:checked + label,
+					&:not(:checked) + label {
+						padding-left: 25px;
+					}
+
+					&:checked + label:before,
+					&:not(:checked) + label:before {
+						left: 0;
+						top: 5px;
+						@include size(16px, 16px);
+					}
+
+					&:checked + label:after,
+					&:not(:checked) + label:after {
+						left: 2.4px;
+						top: 7.4px;
+						@include size(11.2px, 11.2px);
+					}
+				}
+			}
+		}
+
 		button.transition {
 			bottom: 16px;
+			@include size(124px, 50px);
+			@include font_size-line(14px, 17px);
+		}
+		&.section-rect-4 {
+			.quest-content__block {
+				padding: 17px;
+
+				.quest__main {
+					margin-bottom: 16px;
+				}
+
+				.inputs__container {
+					justify-content: space-between;
+
+					.input-radio__wrapper {
+						width: auto;
+						padding: 6px 14px 6px;
+
+						&.tel {
+							order: 1;
+						}
+						&.whatsapp {
+							order: 2;
+						}
+						&.viber {
+							order: 3;
+						}
+						&.email {
+							order: 4;
+						}
+						&.telegram {
+							order: 5;
+						}
+					}
+
+				}
+
+				.input-txt__wrapper {
+					margin: 11px 0 11px;
+
+					input {
+						@include size(256px, 61px);
+						padding: 24px 15px 5px;
+						@include font_size-line(14px, 32px);
+					}
+
+					label {
+						top: 11px;
+						left: 15px;
+						@include font_size-line(10px, 12px);
+					}
+				}
+
+				button.transition {
+					@include size(258px, 50px);
+				}
+			}
 		}
 	}
 

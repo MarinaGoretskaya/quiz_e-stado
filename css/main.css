@@ -482,6 +482,9 @@ main {
         margin-right: 9px; }
       .section-top__items-wrapper .item:not(:last-child) {
         margin-right: 51px; }
+      .section-top__items-wrapper .item__content {
+        font-size: 12px;
+        line-height: 18px; }
 
 .section-rect {
   max-width: 962px;
@@ -669,21 +672,141 @@ main {
   height: 100vh;
   background: url("./../img/png/cow-with-bush.png") no-repeat center bottom, url("./../img/png/bush.png") no-repeat right bottom;
   bottom: 0;
-  left: 0; }
+  left: 0;
+  z-index: -1; }
 
 @media (max-width: 970px) {
-  .section-top__items-wrapper {
-    flex-direction: column;
-    justify-content: center; }
-    .section-top__items-wrapper .item:not(:last-child) {
-      margin-bottom: 20px; }
-    .section-top__items-wrapper .item {
+  .header {
+    margin-bottom: 37px; }
+    .header__logo_pict {
+      width: 93.24px; }
+    .header__logo_title {
+      font-size: 9px;
+      line-height: 13px; }
+  .section-top {
+    margin-bottom: 25px; }
+    .section-top__title {
+      margin-bottom: 5px;
+      font-size: 10px;
+      line-height: 12px; }
+    .section-top__quest {
+      font-size: 15px;
+      line-height: 20px;
+      margin-bottom: 13px; }
+    .section-top__items-wrapper {
       flex-direction: column;
-      align-items: center;
-      text-align: center; }
-    .section-top__items-wrapper .item-1, .section-top__items-wrapper .item-3 {
-      display: none; }
-  .section-rect button.transition {
-    bottom: 16px; } }
+      justify-content: center; }
+      .section-top__items-wrapper .item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-right: 0 !important; }
+        .section-top__items-wrapper .item__logo {
+          width: 30px;
+          height: 30px;
+          margin-right: 0;
+          margin-bottom: 6px; }
+          .section-top__items-wrapper .item__logo img {
+            width: 100%;
+            height: 100%; }
+        .section-top__items-wrapper .item__content {
+          font-size: 11px;
+          line-height: 18px; }
+      .section-top__items-wrapper .item-1, .section-top__items-wrapper .item-3 {
+        display: none; }
+  .section-rect {
+    padding: 5px;
+    min-height: 332px; }
+    .section-rect .quest-line__block {
+      height: 33px;
+      padding: 11px 14px 12px;
+      margin-bottom: 4px; }
+      .section-rect .quest-line__block .quest-line {
+        height: 6px; }
+        .section-rect .quest-line__block .quest-line .line {
+          height: 4px; }
+        .section-rect .quest-line__block .quest-line .steps__wrapper .step {
+          width: 10px;
+          height: 10px; }
+    .section-rect .quest-content__block {
+      padding: 24px; }
+      .section-rect .quest-content__block .quest__title {
+        font-size: 12px;
+        line-height: 14px;
+        margin-bottom: 20px; }
+      .section-rect .quest-content__block .quest__main {
+        font-size: 18px;
+        line-height: 22px;
+        margin-bottom: 18px; }
+      .section-rect .quest-content__block .input[type="number"] {
+        width: 176px;
+        height: 50px;
+        font-size: 14px;
+        line-height: 20px;
+        padding: 15px 16px 18px; }
+      .section-rect .quest-content__block .input-radio__wrapper {
+        width: 183px;
+        padding: 4px 14px; }
+        .section-rect .quest-content__block .input-radio__wrapper label {
+          font-size: 10px;
+          line-height: 26px; }
+        .section-rect .quest-content__block .input-radio__wrapper:not(:last-child) {
+          margin-bottom: 6px; }
+        .section-rect .quest-content__block .input-radio__wrapper input[type="radio"]:checked + label,
+        .section-rect .quest-content__block .input-radio__wrapper input[type="radio"]:not(:checked) + label {
+          padding-left: 25px; }
+        .section-rect .quest-content__block .input-radio__wrapper input[type="radio"]:checked + label:before,
+        .section-rect .quest-content__block .input-radio__wrapper input[type="radio"]:not(:checked) + label:before {
+          left: 0;
+          top: 5px;
+          width: 16px;
+          height: 16px; }
+        .section-rect .quest-content__block .input-radio__wrapper input[type="radio"]:checked + label:after,
+        .section-rect .quest-content__block .input-radio__wrapper input[type="radio"]:not(:checked) + label:after {
+          left: 2.4px;
+          top: 7.4px;
+          width: 11.2px;
+          height: 11.2px; }
+    .section-rect button.transition {
+      bottom: 16px;
+      width: 124px;
+      height: 50px;
+      font-size: 14px;
+      line-height: 17px; }
+    .section-rect.section-rect-4 .quest-content__block {
+      padding: 17px; }
+      .section-rect.section-rect-4 .quest-content__block .quest__main {
+        margin-bottom: 16px; }
+      .section-rect.section-rect-4 .quest-content__block .inputs__container {
+        justify-content: space-between; }
+        .section-rect.section-rect-4 .quest-content__block .inputs__container .input-radio__wrapper {
+          width: auto;
+          padding: 6px 14px 6px; }
+          .section-rect.section-rect-4 .quest-content__block .inputs__container .input-radio__wrapper.tel {
+            order: 1; }
+          .section-rect.section-rect-4 .quest-content__block .inputs__container .input-radio__wrapper.whatsapp {
+            order: 2; }
+          .section-rect.section-rect-4 .quest-content__block .inputs__container .input-radio__wrapper.viber {
+            order: 3; }
+          .section-rect.section-rect-4 .quest-content__block .inputs__container .input-radio__wrapper.email {
+            order: 4; }
+          .section-rect.section-rect-4 .quest-content__block .inputs__container .input-radio__wrapper.telegram {
+            order: 5; }
+      .section-rect.section-rect-4 .quest-content__block .input-txt__wrapper {
+        margin: 11px 0 11px; }
+        .section-rect.section-rect-4 .quest-content__block .input-txt__wrapper input {
+          width: 256px;
+          height: 61px;
+          padding: 24px 15px 5px;
+          font-size: 14px;
+          line-height: 32px; }
+        .section-rect.section-rect-4 .quest-content__block .input-txt__wrapper label {
+          top: 11px;
+          left: 15px;
+          font-size: 10px;
+          line-height: 12px; }
+      .section-rect.section-rect-4 .quest-content__block button.transition {
+        width: 258px;
+        height: 50px; } }
 
 /*# sourceMappingURL=main.css.map */
