@@ -197,6 +197,7 @@ main {
 
 			label {
 				@include font_size-line(16px, 26px);
+				flex-wrap: nowrap;
 			}
 
 			&:not(:last-child) {
@@ -343,11 +344,22 @@ main {
 	url("./../img/png/bush.png") no-repeat right bottom;
 	bottom: 0;
 	left: 0;
-	z-index: -1;
+	//z-index: -1;
 }
 
 
 @media (max-width: 970px) {
+	.bg {
+		height: 805px;
+		background: url("./../img/png/clouds.png") no-repeat center -65px,
+		url("./../img/png/clouds.png") no-repeat center -195px,
+		url("./../img/png/clouds.png") no-repeat center -270px,
+		url("./../img/png/bg-image.png") no-repeat center center;
+	}
+	main {
+		padding: 19px 10px;
+	}
+
 	.header {
 		margin-bottom: 37px;
 
@@ -356,6 +368,7 @@ main {
 		}
 		&__logo_title {
 			@include font_size-line(9px, 13px);
+			max-width: 160px;
 		}
 	}
 	.section-top {
@@ -427,6 +440,7 @@ main {
 
 		.quest-content__block {
 			padding: 24px;
+			min-height: 285px;
 
 			.quest__title {
 				@include font_size-line(12px, 14px);
@@ -435,13 +449,14 @@ main {
 
 			.quest__main {
 				@include font_size-line(18px, 22px);
-				margin-bottom: 18px;
+				margin-bottom: 12px;
 			}
 
 			.input[type="number"] {
 				@include size(176px, 50px);
 				@include font_size-line(14px, 20px);
 				padding: 15px 16px 18px;
+				margin-top: 5px;
 			}
 
 			.input-radio__wrapper {
@@ -481,16 +496,16 @@ main {
 		}
 
 		button.transition {
-			bottom: 16px;
-			@include size(124px, 50px);
+			bottom: 20px;
+			@include size(124px, 46px);
 			@include font_size-line(14px, 17px);
 		}
 		&.section-rect-4 {
 			.quest-content__block {
-				padding: 17px;
+				padding: 17px 12px;
 
 				.quest__main {
-					margin-bottom: 16px;
+					margin-bottom: 11px;
 				}
 
 				.inputs__container {
@@ -498,29 +513,34 @@ main {
 
 					.input-radio__wrapper {
 						width: auto;
-						padding: 6px 14px 6px;
+						padding: 4px 8px 4px 11px;
 
 						&.tel {
 							order: 1;
+							width: 46%;
 						}
 						&.whatsapp {
 							order: 2;
+							width: 46%;
 						}
 						&.viber {
 							order: 3;
+							width: 26%;
 						}
 						&.email {
 							order: 4;
+							width: 29%;
 						}
 						&.telegram {
 							order: 5;
+							width: 33%;
 						}
 					}
 
 				}
 
 				.input-txt__wrapper {
-					margin: 11px 0 11px;
+					margin: 7px 0 11px;
 
 					input {
 						@include size(256px, 61px);
@@ -541,5 +561,12 @@ main {
 			}
 		}
 	}
-
+	.img_top-layer {
+		width: 100%;
+		height: 100vh;
+		background: url("./../img/png/bush-2.png") no-repeat right bottom,
+		url("./../img/png/cow.png") no-repeat right bottom;
+		bottom: -207px;
+		left: 0;
+	}
 }

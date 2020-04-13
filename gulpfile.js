@@ -5,8 +5,14 @@ const concat = require('gulp-concat');
 const jquery = require('jquery');
 const watch = require('gulp-watch');
 
+const cssFiles = [
+	'./node_modules/jquery/dist/css/bootstrap.min.css',
+	'./scss/**/*.scss'
+]
+
 const jsFiles = [
-	'./node_modules/jquery/dist/jquery.min.js',
+	'./node_modules/bootstrap/dist/js/bootstrap.min.js',
+	'./node_modules/jquery/dist/css/bootstrap.min.css',
 	'./js/main.js'
 ]
 
@@ -17,7 +23,8 @@ function scripts() {
 }
 
 gulp.task('sass-compile', function () {
-	return gulp.src('./scss/**/*.scss')
+	// return gulp.src('./scss/**/*.scss')
+	return gulp.src(cssFiles)
 		.pipe(sourcemaps.init())
 		.pipe(sass().on('error', sass.logError))
 		.pipe(sourcemaps.write('./'))

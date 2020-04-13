@@ -567,7 +567,8 @@ main {
       border-radius: 4px; }
       .section-rect .quest-content__block .input-radio__wrapper label {
         font-size: 16px;
-        line-height: 26px; }
+        line-height: 26px;
+        flex-wrap: nowrap; }
       .section-rect .quest-content__block .input-radio__wrapper:not(:last-child) {
         margin-bottom: 20px; }
       .section-rect .quest-content__block .input-radio__wrapper input[type="radio"]:checked, .section-rect .quest-content__block .input-radio__wrapper input[type="radio"]:not(:checked) {
@@ -672,17 +673,22 @@ main {
   height: 100vh;
   background: url("./../img/png/cow-with-bush.png") no-repeat center bottom, url("./../img/png/bush.png") no-repeat right bottom;
   bottom: 0;
-  left: 0;
-  z-index: -1; }
+  left: 0; }
 
 @media (max-width: 970px) {
+  .bg {
+    height: 805px;
+    background: url("./../img/png/clouds.png") no-repeat center -65px, url("./../img/png/clouds.png") no-repeat center -195px, url("./../img/png/clouds.png") no-repeat center -270px, url("./../img/png/bg-image.png") no-repeat center center; }
+  main {
+    padding: 19px 10px; }
   .header {
     margin-bottom: 37px; }
     .header__logo_pict {
       width: 93.24px; }
     .header__logo_title {
       font-size: 9px;
-      line-height: 13px; }
+      line-height: 13px;
+      max-width: 160px; }
   .section-top {
     margin-bottom: 25px; }
     .section-top__title {
@@ -729,7 +735,8 @@ main {
           width: 10px;
           height: 10px; }
     .section-rect .quest-content__block {
-      padding: 24px; }
+      padding: 24px;
+      min-height: 285px; }
       .section-rect .quest-content__block .quest__title {
         font-size: 12px;
         line-height: 14px;
@@ -737,13 +744,14 @@ main {
       .section-rect .quest-content__block .quest__main {
         font-size: 18px;
         line-height: 22px;
-        margin-bottom: 18px; }
+        margin-bottom: 12px; }
       .section-rect .quest-content__block .input[type="number"] {
         width: 176px;
         height: 50px;
         font-size: 14px;
         line-height: 20px;
-        padding: 15px 16px 18px; }
+        padding: 15px 16px 18px;
+        margin-top: 5px; }
       .section-rect .quest-content__block .input-radio__wrapper {
         width: 183px;
         padding: 4px 14px; }
@@ -768,32 +776,37 @@ main {
           width: 11.2px;
           height: 11.2px; }
     .section-rect button.transition {
-      bottom: 16px;
+      bottom: 20px;
       width: 124px;
-      height: 50px;
+      height: 46px;
       font-size: 14px;
       line-height: 17px; }
     .section-rect.section-rect-4 .quest-content__block {
-      padding: 17px; }
+      padding: 17px 12px; }
       .section-rect.section-rect-4 .quest-content__block .quest__main {
-        margin-bottom: 16px; }
+        margin-bottom: 11px; }
       .section-rect.section-rect-4 .quest-content__block .inputs__container {
         justify-content: space-between; }
         .section-rect.section-rect-4 .quest-content__block .inputs__container .input-radio__wrapper {
           width: auto;
-          padding: 6px 14px 6px; }
+          padding: 4px 8px 4px 11px; }
           .section-rect.section-rect-4 .quest-content__block .inputs__container .input-radio__wrapper.tel {
-            order: 1; }
+            order: 1;
+            width: 46%; }
           .section-rect.section-rect-4 .quest-content__block .inputs__container .input-radio__wrapper.whatsapp {
-            order: 2; }
+            order: 2;
+            width: 46%; }
           .section-rect.section-rect-4 .quest-content__block .inputs__container .input-radio__wrapper.viber {
-            order: 3; }
+            order: 3;
+            width: 26%; }
           .section-rect.section-rect-4 .quest-content__block .inputs__container .input-radio__wrapper.email {
-            order: 4; }
+            order: 4;
+            width: 29%; }
           .section-rect.section-rect-4 .quest-content__block .inputs__container .input-radio__wrapper.telegram {
-            order: 5; }
+            order: 5;
+            width: 33%; }
       .section-rect.section-rect-4 .quest-content__block .input-txt__wrapper {
-        margin: 11px 0 11px; }
+        margin: 7px 0 11px; }
         .section-rect.section-rect-4 .quest-content__block .input-txt__wrapper input {
           width: 256px;
           height: 61px;
@@ -807,6 +820,12 @@ main {
           line-height: 12px; }
       .section-rect.section-rect-4 .quest-content__block button.transition {
         width: 258px;
-        height: 50px; } }
+        height: 50px; }
+  .img_top-layer {
+    width: 100%;
+    height: 100vh;
+    background: url("./../img/png/bush-2.png") no-repeat right bottom, url("./../img/png/cow.png") no-repeat right bottom;
+    bottom: -207px;
+    left: 0; } }
 
 /*# sourceMappingURL=main.css.map */
