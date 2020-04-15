@@ -27,6 +27,8 @@ $(document).ready ( function(){
 	let inpTelegram = body.find('#input-telegram');
 	let inpWhatsapp = body.find('#input-whatsapp');
 
+	let formMail = body.find('#form-email');
+
 	let btnSubmit = section4.find("button[type='submit']");
 	console.log(btnSubmit);
 
@@ -77,57 +79,99 @@ $(document).ready ( function(){
 			case 'Телефон':
 				allInp.addClass('display-none');
 				inpTel.removeClass('display-none');
-				contactValue = inpTel.val();
-				console.log(contactValue);
 				break;
 			case 'e-mail':
 				allInp.addClass('display-none');
 				inpEmail.removeClass('display-none');
-				contactValue = inpEmail.val();
-				console.log(contactValue);
 				break;
 			case 'viber':
 				allInp.addClass('display-none');
 				inpViber.removeClass('display-none');
-				contactValue = inpViber.val();
-				console.log(contactValue);
 				break;
 			case 'telegram':
 				allInp.addClass('display-none');
 				inpTelegram.removeClass('display-none');
-				contactValue = inpTelegram.val();
-				console.log(contactValue);
 				break;
 			case 'whatsapp':
 				allInp.addClass('display-none');
 				inpWhatsapp.removeClass('display-none');
-				contactValue = inpWhatsapp.val();
-				console.log(contactValue);
 				break;
 			default:
 				allInp.addClass('display-none');
 				inpTel.removeClass('display-none');
-				contactValue = 'Вы не ввели данные';
-				console.log(contactValue);
 				break;
 		}
-		return contactValue;
 	}
 
 	function submitData() {
-		console.log('Данные отправлены');
-		btnSubmit.addClass('display-none');
+		// btnSubmit.addClass('display-none');
 
 		if(!contact) {
 			contact = 'Телефон';
-			contactValue = 'Вы не ввели данные';
 		}
+		checkContactValue(contact);
+		if (!contactValue || (contactValue === 'Вы не ввели данные')) {
+			contactValue = 'Вы не ввели данные';
+			alert(contactValue);
+			return;
+		}
+
+
 
 		section4.html('div').html('Количество дойных коров: ' + countCow + '. Вы доите ' + countMilk + ' л молока в сутки. Вы – ' + position + '. Ваш ' + contact + ': ' + contactValue + '.');
 
 		allInp.addClass('display-none');
 		inpTel.removeClass('display-none');
+
+		sendForm(formMail);
+
+		console.log('Данные отправлены');
 		open("https://www.figma.com/file/NgF3FzxtgvbiZqmprLURlS/e-stado-%D0%B4%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD?node-id=0%3A1");
+	}
+
+	function checkContactValue(contact) {
+		switch (contact) {
+			case 'Телефон':
+				contactValue = inpTel.find('#inp-phone').val();
+				console.log(contactValue);
+				break;
+			case 'e-mail':
+				contactValue = inpEmail.find('#inp-email').val();
+				console.log(contactValue);
+				break;
+			case 'viber':
+				contactValue = inpViber.find('#inp-viber').val();
+				console.log(contactValue);
+				break;
+			case 'telegram':
+				contactValue = inpTelegram.find('#inp-telegram').val();
+				console.log(contactValue);
+				break;
+			case 'whatsapp':
+				contactValue = inpWhatsapp.find('#inp-whatsapp').val();
+				console.log(contactValue);
+				break;
+			default:
+				contactValue = 'Вы не ввели данные';
+				console.log(contactValue);
+				break;
+		}
+	}
+	function sendForm(mail) {
+		// var form = $('#'+form_id);
+		var msg   = mail.serialize();
+		$.ajax({
+			type: 'POST',
+			url: '../handlers/hSentEmailCall.php', // Обработчик собственно
+			data: msg,
+			success: function(data) {
+				// запустится при успешном выполнении запроса и в data будет ответ скрипта
+			},
+			error:  function(){
+				alert('Ошибка!');
+			}
+		});
+
 	}
 
 });
