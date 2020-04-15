@@ -6,13 +6,15 @@ const jquery = require('jquery');
 const watch = require('gulp-watch');
 
 const cssFiles = [
-	'./node_modules/jquery/dist/css/bootstrap.min.css',
+	// './node_modules/jquery/dist/css/bootstrap.min.css',
 	'./scss/**/*.scss'
 ]
 
 const jsFiles = [
-	'./node_modules/bootstrap/dist/js/bootstrap.min.js',
-	'./node_modules/jquery/dist/css/bootstrap.min.css',
+	'./node_modules/jquery/dist/jquery.min.js',
+	'./node_modules/jquery.maskedinput/src/jquery.maskedinput.js',
+
+	// './node_modules/bootstrap/dist/js/bootstrap.min.js',
 	'./js/main.js'
 ]
 

@@ -30,6 +30,14 @@ $(document).ready ( function(){
 	let btnSubmit = section4.find("button[type='submit']");
 	console.log(btnSubmit);
 
+	// let inputTel = body.find('#inp-phone');
+
+	body.find('#inp-phone').mask("+375(99) 999-99-99");
+	// body.find('#inp-email').mask("sample@some.by");
+	body.find('#inp-viber').mask("+375(99) 999-99-99");
+	body.find('#inp-telegram').mask("+375(99) 999-99-99");
+	body.find('#inp-whatsapp').mask("+375(99) 999-99-99");
+
 	function displaySection1() {
 		section1.addClass('display-none');
 		section2.removeClass('display-none');
