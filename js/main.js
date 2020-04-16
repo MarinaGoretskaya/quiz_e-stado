@@ -1,4 +1,4 @@
-$(document).ready ( function(){
+$(document).ready(function () {
 	let body = $(document);
 
 	let countCow;
@@ -15,10 +15,12 @@ $(document).ready ( function(){
 	$('#section-rect-1').find('button').click(displaySection1);
 	$('#section-rect-2').find('button').click(displaySection2);
 	$('#section-rect-3').find('button').click(displaySection3);
-	$('#section-rect-4').find('input').click(displaySection4);
+	$('#section-rect-4').find('input[type="radio"]').click(displaySection4);
 	$('#section-rect-4').find('button').click(submitData);
+	// $('#section-rect-4').find('input[type="submit"]').click(submitData);
 
 	// $('#section-rect-1').find('button').click(displaySection);
+
 
 	let allInp = section4.find('.input-txt__wrapper');
 	let inpTel = section4.find('#input-tel');
@@ -27,18 +29,12 @@ $(document).ready ( function(){
 	let inpTelegram = body.find('#input-telegram');
 	let inpWhatsapp = body.find('#input-whatsapp');
 
-	let formMail = body.find('#form-email');
+	let formSubmit = body.find('#submit');
+	let ajaxForm = body.find('#ajax_form');
+	let resultForm = body.find('#result_form');
 
-	let btnSubmit = section4.find("button[type='submit']");
-	console.log(btnSubmit);
-
-	// let inputTel = body.find('#inp-phone');
-
-	body.find('#inp-phone').mask("+375(99) 999-99-99");
-	// body.find('#inp-email').mask("sample@some.by");
-	body.find('#inp-viber').mask("+375(99) 999-99-99");
-	body.find('#inp-telegram').mask("+375(99) 999-99-99");
-	body.find('#inp-whatsapp').mask("+375(99) 999-99-99");
+	body.find('#inp-phone, #inp-viber, #inp-telegram, #inp-whatsapp').mask("+375 (99) 999-99-99");
+	body.find('#inp-email').inputmask("email");
 
 	function displaySection1() {
 		section1.addClass('display-none');
@@ -47,31 +43,30 @@ $(document).ready ( function(){
 		if (!countCow) {
 			countCow = 45;
 		}
-		console.log(countCow);
 	}
 
 	function displaySection2() {
 		section2.addClass('display-none');
 		section3.removeClass('display-none');
 
+
 		countMilk = section2.find('input').val();
 		if (!countMilk) {
 			countMilk = 12;
 		}
-		console.log(countMilk);
 	}
+
 	function displaySection3() {
 		section3.addClass('display-none');
 		section4.removeClass('display-none');
 
 		position = section3.find('input:checked').val();
-		console.log(position);
 	}
+
 	function displaySection4() {
 		contact = section4.find('input:checked').val();
-		console.log(contact);
 
-		if(!contact) {
+		if (!contact) {
 			contact = 'Телефон';
 		}
 
@@ -104,9 +99,7 @@ $(document).ready ( function(){
 	}
 
 	function submitData() {
-		// btnSubmit.addClass('display-none');
-
-		if(!contact) {
+		if (!contact) {
 			contact = 'Телефон';
 		}
 		checkContactValue(contact);
@@ -115,17 +108,13 @@ $(document).ready ( function(){
 			alert(contactValue);
 			return;
 		}
-
-
-
 		section4.html('div').html('Количество дойных коров: ' + countCow + '. Вы доите ' + countMilk + ' л молока в сутки. Вы – ' + position + '. Ваш ' + contact + ': ' + contactValue + '.');
 
 		allInp.addClass('display-none');
 		inpTel.removeClass('display-none');
 
-		sendForm(formMail);
+		sendForm('result_form', 'ajax_form', 'send.php');
 
-		console.log('Данные отправлены');
 		open("https://www.figma.com/file/NgF3FzxtgvbiZqmprLURlS/e-stado-%D0%B4%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD?node-id=0%3A1");
 	}
 
@@ -133,45 +122,39 @@ $(document).ready ( function(){
 		switch (contact) {
 			case 'Телефон':
 				contactValue = inpTel.find('#inp-phone').val();
-				console.log(contactValue);
 				break;
 			case 'e-mail':
 				contactValue = inpEmail.find('#inp-email').val();
-				console.log(contactValue);
 				break;
 			case 'viber':
 				contactValue = inpViber.find('#inp-viber').val();
-				console.log(contactValue);
 				break;
 			case 'telegram':
 				contactValue = inpTelegram.find('#inp-telegram').val();
-				console.log(contactValue);
 				break;
 			case 'whatsapp':
 				contactValue = inpWhatsapp.find('#inp-whatsapp').val();
-				console.log(contactValue);
 				break;
 			default:
 				contactValue = 'Вы не ввели данные';
-				console.log(contactValue);
 				break;
 		}
 	}
-	function sendForm(mail) {
-		// var form = $('#'+form_id);
-		var msg   = mail.serialize();
+
+	function sendForm(result_form, ajax_form, url) {
 		$.ajax({
+			url: url,
 			type: 'POST',
-			url: '../handlers/hSentEmailCall.php', // Обработчик собственно
-			data: msg,
-			success: function(data) {
-				// запустится при успешном выполнении запроса и в data будет ответ скрипта
+			dataType: "html",
+			data: $("#" + ajax_form).serialize(),
+			success: function (response) {
+				result = $.parseJSON(response);
+				$('#result_form').html('e-mail: ' + result.email);
 			},
-			error:  function(){
-				alert('Ошибка!');
+			error: function () {
+				console.log('Ошибка. Данные не отправлены.');
 			}
 		});
-
 	}
 
 });

@@ -186,30 +186,30 @@
                     </div>
                 </div>
 
-                <div id="input-tel" class="input-txt__wrapper tel display-none">
-                    <input type="tel" id="inp-phone" placeholder="+375 (_ _) _ _ _-_ _-_ _" autofocus required>
-                    <label for="tel">Введите ваш номер телефона</label>
-                </div>
-                <form id="form-email">
+                <form id="ajax_form" action="send.php" method="post">
+                    <div id="input-tel" class="input-txt__wrapper tel display-none">
+                        <input type="tel" id="inp-phone" placeholder="+375 (__) ___-__-__" autofocus required>
+                        <label for="tel">Введите ваш номер телефона</label>
+                    </div>
                     <div id="input-email" class="input-txt__wrapper email display-none">
-                        <input type="email" id="inp-email" placeholder="simple@example.com" autofocus  required>
+                        <input type="inp-email" name="email" type="text" id="inp-email" placeholder="simple@example.com" autofocus required autocomplete>
                         <label for="tel">Введите ваш e-mail</label>
                     </div>
-                </form>
-                <div id="input-viber" class="input-txt__wrapper viber">
-                    <input type="tel" id="inp-viber" placeholder="+375 (_ _) _ _ _-_ _-_ _" autofocus  required>
-                    <label for="tel">Введите ваш номер Viber</label>
-                </div>
-                <div id="input-telegram" class="input-txt__wrapper telegram display-none">
-                    <input type="tel" id="inp-telegram" placeholder="+375 (_ _) _ _ _-_ _-_ _" autofocus  required>
-                    <label for="tel">Введите ваш номер Telegram</label>
-                </div>
-                <div id="input-whatsapp" class="input-txt__wrapper whatsapp display-none">
-                    <input type="tel" id="inp-whatsapp" placeholder="+375 (_ _) _ _ _-_ _-_ _" autofocus  required>
-                    <label for="tel">Введите ваш номер Whatsapp</label>
-                </div>
+                    <div id="input-viber" class="input-txt__wrapper viber">
+                        <input type="tel" id="inp-viber" placeholder="+375 (__) ___-__-__" autofocus  required>
+                        <label for="tel">Введите ваш номер Viber</label>
+                    </div>
+                    <div id="input-telegram" class="input-txt__wrapper telegram display-none">
+                        <input type="tel" id="inp-telegram" placeholder="+375 (__) ___-__-__" autofocus required>
+                        <label for="tel">Введите ваш номер Telegram</label>
+                    </div>
+                    <div id="input-whatsapp" class="input-txt__wrapper whatsapp display-none">
+                        <input type="tel" id="inp-whatsapp" placeholder="+375 (__) ___-__-__" autofocus required>
+                        <label for="tel">Введите ваш номер Whatsapp</label>
+                    </div>
 
-                <button type="submit" class="transition submit">Отправить и получить ответ</button>
+                    <button type="submit" name="submit" class="transition submit">Отправить и получить ответ</button>
+                </form>
 
             </div>
         </section>
