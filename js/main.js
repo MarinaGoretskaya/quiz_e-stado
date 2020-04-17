@@ -18,7 +18,7 @@ $(document).ready(function () {
 	$('#section-rect-2').find('button').click(displaySection2);
 	$('#section-rect-3').find('button').click(displaySection3);
 	$('#section-rect-4').find('input[type="radio"]').click(displayInput);
-	$('#section-rect-4').find('button').click(submitData);
+	$('#section-rect-4').find('#sendData').click(submitData);
 
 
 	let allInp = section4.find('.input-txt__wrapper');
@@ -27,6 +27,8 @@ $(document).ready(function () {
 	let inpViber = body.find('#input-viber');
 	let inpTelegram = body.find('#input-telegram');
 	let inpWhatsapp = body.find('#input-whatsapp');
+
+	// let ajaxForm = body.find('#ajax_form');
 
 	body.find('#inp-phone, #inp-viber, #inp-telegram, #inp-whatsapp').mask("+375 (99) 999-99-99");
 	body.find('#inp-email').inputmask("email");
@@ -113,7 +115,12 @@ $(document).ready(function () {
 
 		sendForm('ajax_form', 'send.php', resultData);
 
-		open("https://www.figma.com/file/NgF3FzxtgvbiZqmprLURlS/e-stado-%D0%B4%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD?node-id=0%3A1");
+		function goToSite(){
+			open(self.location="https://leadme.agency");
+		}
+		window.setTimeout(goToSite,5000);
+
+		// open("https://www.figma.com/file/NgF3FzxtgvbiZqmprLURlS/e-stado-%D0%B4%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD?node-id=0%3A1");
 	}
 
 	function checkContactValue(contact) {
@@ -139,19 +146,29 @@ $(document).ready(function () {
 		}
 	}
 
-	function sendForm(ajax_form, url, resultData) {
-		// let result;
+	function sendForm(ajax_form, url) {
 		$.ajax({
 			url: url,
 			type: 'POST',
-			dataType: "html",
-			data: $("#" + ajax_form).serialize() + resultData,
-			success: function (response) {
-				// result = $.parseJSON(response);
-				console.log('Данные отправлены.');
+			cache: false,
+			dataType: 'html',
+			data: {'countCow': countCow, 'countMilk': countMilk, 'position': position, 'email': contactValue},
+			beforeSend: function() {
+				$("#sendData").prop("disabled", true);
 			},
-			error: function () {
+			success: function (response) {
+				console.log('Данные отправлены.');
+				if(!response) {
+					alert("Были ошибки, сообщение не отправлено");
+				} else {
+					$("#ajax_form").trigger("reset");
+				}
+				alert(response);
+				$("#sendData").prop("disabled", false);
+			},
+			error: function (response) {
 				console.log('Ошибка. Данные не отправлены.');
+
 			}
 		});
 	}

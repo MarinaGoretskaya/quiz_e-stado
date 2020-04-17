@@ -14,7 +14,6 @@ const jsFiles = [
 	'./node_modules/jquery/dist/jquery.min.js',
 	'./node_modules/jquery.maskedinput/src/jquery.maskedinput.js',
 	'./node_modules/inputmask/dist/jquery.inputmask.min.js',
-	'./js/ajax.js',
 	'./js/main.js'
 ]
 

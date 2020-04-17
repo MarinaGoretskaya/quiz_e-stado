@@ -1,31 +1,26 @@
 <?php
 
-if(isset($_POST['submit'])){
     $email = $_POST['email'];
-    $resultData = $_POST['resultData'];
 
-    $to = $email;
-    //    $from = "https://leadme.agency";
-    if (!preg_match("/([\w\-]+\@[\w\-]+\.[\w\-]+)/", $email))
-    {
-        show_error("<br /> Е-mail адрес не существует");
-    }
+    $from = "https://leadme.agency";
 
-    $mail_to_myemail = "Здравствуйте! 
-Было отправлено сообщение с сайта $from!
-Ваш E-mail: $email.
-resultData.";
+    $countCow = $_POST['countCow'];
+    $countMilk = $_POST['countMilk'];
+    $position = $_POST['position'];
 
-    $headers = "From: $from \r\n";
+    $subject = "=?utf-8?B?".base64_encode("Сообщение с сайта")."?=";
+    $message =
+        "Было отправлено сообщение с сайта $from!
+        Ваш E-mail: $email.
+        Количество дойных коров: $countCow.
+        Вы доите $countMilk л молока в сутки.
+        Вы – $position.";
+    $headers = "From: $email\r\nReply-to: $email\r\nContent-type: text/html; charset=utf-8\r\n";
 
-    /* Отправка сообщения, с помощью функции mail() */
-    mail($to, $mail_to_myemail, $headers . 'Content-type: text/plain; charset=utf-8');
+    $success = mail($email, $subject, $message, $headers);
+
+//    echo $success;
+
     echo "Сообщение отправлено. Спасибо Вам , мы скоро свяжемся с Вами.";
-    echo "<br /><br /><a href='https://epicblog.net'>Вернуться на сайт.</a>";
-}
+
 ?>
-<!--Переадресация на главную страницу сайта, через 3 секунды-->
-<script language="JavaScript" type="text/javascript">
-	function changeurl(){eval(self.location="https://leadme.agency");}
-	window.setTimeout("changeurl();",3000);
-</script>
