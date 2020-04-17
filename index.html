@@ -58,6 +58,8 @@
         </section>
 
         <!--section-rect 1-->
+
+
         <section id="section-rect-1" class="section section-rect section-rect-1">
             <div class="quest-line__block block">
                 <div class="quest-line flex-between-center">
@@ -73,7 +75,7 @@
             <div class="quest-content__block block flex-col-top-center">
                 <div class="quest__title">Вопрос 1</div>
                 <div class="quest__main">Сколько у вас <span class="color-green bold">дойных коров?</span></div>
-                <input class="input cursor-text" placeholder="Например: 45" type="number" autofocus>
+                <input class="input cursor-text" name="countCow" placeholder="Например: 45" type="number" autofocus>
                 <button type="submit" class="transition next flex-center">
                     <span class="next-txt">Далее</span>
                     <span class="next-icon">
@@ -99,7 +101,7 @@
             <div class="quest-content__block block flex-col-top-center">
                 <div class="quest__title">Вопрос 2</div>
                 <div class="quest__main">Сколько <span class="color-green bold">молока в&nbsp;сутки вы доите?</span></div>
-                <input class="input cursor-text" placeholder="Например: 12" type="number" autofocus>
+                <input class="input cursor-text" placeholder="Например: 12" type="number" name="countMilk" autofocus>
                 <button type="submit" class="transition next flex-center">
                     <span class="next-txt">Далее</span>
                     <span class="next-icon">
@@ -186,33 +188,33 @@
                     </div>
                 </div>
 
-                <form id="ajax_form" action="send.php" method="post">
-                    <div id="input-tel" class="input-txt__wrapper tel display-none">
-                        <input type="tel" id="inp-phone" placeholder="+375 (__) ___-__-__" autofocus required>
+                <form id="ajax_form" action="" method="post">
+                    <div id="input-tel" class="input-txt__wrapper tel">
+                        <input type="tel" name="phone" id="inp-phone" placeholder="+375 (__) ___-__-__" autofocus required>
                         <label for="tel">Введите ваш номер телефона</label>
                     </div>
                     <div id="input-email" class="input-txt__wrapper email display-none">
                         <input type="inp-email" name="email" type="text" id="inp-email" placeholder="simple@example.com" autofocus required autocomplete>
                         <label for="tel">Введите ваш e-mail</label>
                     </div>
-                    <div id="input-viber" class="input-txt__wrapper viber">
-                        <input type="tel" id="inp-viber" placeholder="+375 (__) ___-__-__" autofocus  required>
+                    <div id="input-viber" class="input-txt__wrapper viber display-none">
+                        <input type="tel" name="viber" id="inp-viber" placeholder="+375 (__) ___-__-__" autofocus  required>
                         <label for="tel">Введите ваш номер Viber</label>
                     </div>
                     <div id="input-telegram" class="input-txt__wrapper telegram display-none">
-                        <input type="tel" id="inp-telegram" placeholder="+375 (__) ___-__-__" autofocus required>
+                        <input type="tel" name="telegram" id="inp-telegram" placeholder="+375 (__) ___-__-__" autofocus required>
                         <label for="tel">Введите ваш номер Telegram</label>
                     </div>
                     <div id="input-whatsapp" class="input-txt__wrapper whatsapp display-none">
-                        <input type="tel" id="inp-whatsapp" placeholder="+375 (__) ___-__-__" autofocus required>
+                        <input type="tel" name="whatsapp" id="inp-whatsapp" placeholder="+375 (__) ___-__-__" autofocus required>
                         <label for="tel">Введите ваш номер Whatsapp</label>
                     </div>
 
                     <button type="submit" name="submit" class="transition submit">Отправить и получить ответ</button>
                 </form>
-
             </div>
         </section>
+
     </main>
 
     <div class="img_top-layer">
