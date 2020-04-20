@@ -34,38 +34,44 @@ $(document).ready(function () {
 	body.find('#inp-email').inputmask("email");
 
 	function displaySection1() {
-		section1.addClass('display-none');
-		section2.removeClass('display-none');
 		countCow = section1.find('input').val();
 		if (!countCow) {
-			countCow = 45;
+			alert ('Введите данные в поле');
+			return;
 		}
+		section1.addClass('display-none');
+		section2.removeClass('display-none');
 	}
 
 	function displaySection2() {
-		section2.addClass('display-none');
-		section3.removeClass('display-none');
-
-
 		countMilk = section2.find('input').val();
 		if (!countMilk) {
-			countMilk = 12;
+			alert ('Введите данные в поле');
+			return;
 		}
+		section2.addClass('display-none');
+		section3.removeClass('display-none');
 	}
 
 	function displaySection3() {
+		position = section3.find('input:checked').val();
+
+		if (!position) {
+			alert ('Выберите значение, пожалуйста');
+			return;
+		}
+
 		section3.addClass('display-none');
 		section4.removeClass('display-none');
-
-		position = section3.find('input:checked').val();
 	}
 
 	function displayInput() {
 		contact = section4.find('input:checked').val();
-
-		if (!contact) {
-			contact = 'Телефон';
-		}
+		//
+		// if (!contact) {
+		// 	alert ('Выберите значение пожалуйста');
+		// 	return;
+		// }
 
 		switch (contact) {
 			case 'Телефон':
@@ -102,13 +108,13 @@ $(document).ready(function () {
 		checkContactValue(contact);
 
 		if (!contactValue || (contactValue === 'Вы не ввели данные')) {
-			contactValue = 'Вы не ввели данные';
+			contactValue = 'Вы не ввели Ваши контактные данные для связи';
 			alert(contactValue);
 			return;
 		}
 
 		resultData = 'Количество дойных коров: ' + countCow + '. Вы доите ' + countMilk + ' л молока в сутки. Вы – ' + position + '. Ваш ' + contact + ': ' + contactValue + '.';
-		section4.html('div').html(resultData);
+		// section4.html('div').html(resultData);
 
 		allInp.addClass('display-none');
 		inpTel.removeClass('display-none');
@@ -118,9 +124,8 @@ $(document).ready(function () {
 		function goToSite(){
 			open(self.location="https://leadme.agency");
 		}
-		window.setTimeout(goToSite,5000);
 
-		// open("https://www.figma.com/file/NgF3FzxtgvbiZqmprLURlS/e-stado-%D0%B4%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD?node-id=0%3A1");
+		window.setTimeout(goToSite,3000);
 	}
 
 	function checkContactValue(contact) {
@@ -152,7 +157,7 @@ $(document).ready(function () {
 			type: 'POST',
 			cache: false,
 			dataType: 'html',
-			data: {'countCow': countCow, 'countMilk': countMilk, 'position': position, 'email': contactValue},
+			data: {'countCow': countCow, 'countMilk': countMilk, 'position': position, 'contact': contact, 'contactValue': contactValue},
 			beforeSend: function() {
 				$("#sendData").prop("disabled", true);
 			},
@@ -168,7 +173,6 @@ $(document).ready(function () {
 			},
 			error: function (response) {
 				console.log('Ошибка. Данные не отправлены.');
-
 			}
 		});
 	}
